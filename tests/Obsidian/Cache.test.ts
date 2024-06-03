@@ -379,7 +379,10 @@ describe('cache', () => {
 
         expect(tasks.length).toEqual(1);
 
-        expect(printRoots(tasks)).toMatchInlineSnapshot('""');
+        expect(printRoots(tasks)).toMatchInlineSnapshot(`
+            "- [ ] grandchild task : Task
+            "
+        `);
     });
 
     it('should read 2 roots with grandchild task under parent and child listItem', () => {
@@ -397,7 +400,11 @@ describe('cache', () => {
 
         expect(tasks.length).toEqual(2);
 
-        expect(printRoots(tasks)).toMatchInlineSnapshot('""');
+        expect(printRoots(tasks)).toMatchInlineSnapshot(`
+            "- [ ] grandchild task 1 : Task
+            - [ ] grandchild task 2 : Task
+            "
+        `);
     });
 
     it('should read parent task and child listItem', () => {
